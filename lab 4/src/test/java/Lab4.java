@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -13,15 +14,14 @@ public class Lab4 {
     static  final String WEBSITE="http://formy-project.herokuapp.com/form";
     @BeforeAll
     public  static  void  initSelenium(){
-        WebDriverManager.chromedriver().setup();
-
+        WebDriverManager.edgedriver().setup();
     }
     @Nested
-    @DisplayName("Testing on Chrome Browser")
-    public  class ChromeTesting{
+    @DisplayName("Testing on edge Browser")
+    public  class EdgeTesting{
         @BeforeAll
-        public static void initChrome(){
-            driver = new ChromeDriver();
+        public static void initEdge(){
+            driver = new EdgeDriver();
         }
         @Test
         public void runLab(){
